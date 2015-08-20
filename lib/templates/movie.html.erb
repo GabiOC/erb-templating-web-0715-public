@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= movie.title %> </title>
+  </head>
+  <body>
+    <h1><%= movie.title %> </h1>
+    <h3>Release Date: <%= movie.release_date %> </h3>
+    <h4><em>Director: <%= movie.director %> </em></h4>
+    <p><%= movie.summary %> </p>
+    <br />
+    <h2>Other Movies</h2>
+    <ul>
+      <% Movie.all.each do |m| %>
+         <li>
+           <a href="<%= m.url %>">
+             <%= m.title %>
+           </a>
+         </li>
+       <% end %>
+    </ul>
+  </body>
+</html>
